@@ -1,0 +1,5 @@
+---
+'loadzilla': patch
+---
+
+update peerdeps
