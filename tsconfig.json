@@ -1,11 +1,11 @@
 {
-    "compilerOptions": {
-      "esModuleInterop": true,
-      "skipLibCheck": true,
-      "target": "es2022",
-      "allowJs": true,
-     "forceConsistentCasingInFileNames": true,
-        "incremental": true,
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "incremental": true,
     "tsBuildInfoFile": "./buildcache/tsconfig.tsbuildinfo",
     "module": "esnext",
     "moduleResolution": "node",
@@ -13,14 +13,12 @@
     "noImplicitThis": false,
     "jsx": "preserve",
     "baseUrl": ".",
-      "moduleDetection": "force",
-      "isolatedModules": true,
-      "noEmit": true,
-      "strict": true,
-      "noUncheckedIndexedAccess": true,
-      "noImplicitOverride": true,
-      "lib": ["dom", "dom.iterable", "esnext"],
-     
-    }
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "lib": ["dom", "dom.iterable", "esnext"]
   }
-  
+}
