@@ -19,7 +19,7 @@ interface DynamicWithRetryOptions {
   delay: number; // Delay time (in milliseconds) between each retry attempt
   LoadingComponent: JSX.Element; // Optional custom loading component to display while loading
   FallbackComponent: FC<FallbackProps> | FunctionComponent<FallbackProps>; // Fallback component that displays on loading failure
-  dynamicOptions: Partial<Omit<DynamicOptions, 'loading' | 'loader'>>; // Optional options for the dynamic component
+  dynamicOptions: Omit<DynamicOptions, 'loading' | 'loader'>; // Optional options for the dynamic component
 }
 
 const DefaultFallbackComponent: FC<FallbackProps> = ({ onRetry }) => (
