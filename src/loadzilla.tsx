@@ -1,4 +1,4 @@
-import {
+import React, {
   ComponentType,
   FC,
   FunctionComponent,
@@ -6,7 +6,7 @@ import {
   useState,
 } from 'react';
 
-import dynamic, { Loader } from 'next/dynamic';
+import dynamic, { DynamicOptions, Loader } from 'next/dynamic';
 
 // Define props type for the fallback component
 interface FallbackProps {
@@ -19,6 +19,7 @@ interface DynamicWithRetryOptions {
   delay: number; // Delay time (in milliseconds) between each retry attempt
   LoadingComponent: JSX.Element; // Optional custom loading component to display while loading
   FallbackComponent: FC<FallbackProps> | FunctionComponent<FallbackProps>; // Fallback component that displays on loading failure
+  dynamicOptions: Omit<DynamicOptions, 'loading' | 'loader'>; // Optional options for the dynamic component
 }
 
 const DefaultFallbackComponent: FC<FallbackProps> = ({ onRetry }) => (
@@ -32,6 +33,7 @@ const defaultOptions: DynamicWithRetryOptions = {
   delay: 1000,
   LoadingComponent: <p>Loading...</p>,
   FallbackComponent: DefaultFallbackComponent,
+  dynamicOptions: {},
 };
 
 // Function to create a dynamic component with automatic retry logic
@@ -44,6 +46,7 @@ function dynamicWithAutoRetry<P = Record<string, never>>(
     delay = defaultOptions.delay,
     LoadingComponent = defaultOptions.LoadingComponent,
     FallbackComponent = defaultOptions.FallbackComponent,
+    dynamicOptions = defaultOptions.dynamicOptions,
   } = options ?? defaultOptions;
   let attempt = 0; // Counter to keep track of retry attempts
 
@@ -70,6 +73,7 @@ function dynamicWithAutoRetry<P = Record<string, never>>(
   // Use Next.js dynamic to load the component
   const DynamicComponent = dynamic(loadComponent, {
     loading: () => LoadingComponent, // Show loading component if applicable
+    ...(dynamicOptions as DynamicOptions<P>),
   });
 
   // Return a functional component that handles loading and error states
