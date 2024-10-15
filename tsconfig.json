@@ -4,18 +4,23 @@
       "skipLibCheck": true,
       "target": "es2022",
       "allowJs": true,
-      "resolveJsonModule": true,
-      
+     "forceConsistentCasingInFileNames": true,
+        "incremental": true,
+    "tsBuildInfoFile": "./buildcache/tsconfig.tsbuildinfo",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noImplicitThis": false,
+    "jsx": "preserve",
+    "baseUrl": ".",
       "moduleDetection": "force",
       "isolatedModules": true,
       "noEmit": true,
       "strict": true,
       "noUncheckedIndexedAccess": true,
       "noImplicitOverride": true,
-      "module": "NodeNext",
-      "moduleResolution": "NodeNext",
-      "jsx": "react-jsx",
-      "lib": ["dom", "dom.iterable", "esnext"]
+      "lib": ["dom", "dom.iterable", "esnext"],
+     
     }
   }
   
