@@ -4,9 +4,9 @@ import {
   FunctionComponent,
   useEffect,
   useState,
-} from "react";
+} from 'react';
 
-import dynamic, { Loader } from "next/dynamic";
+import dynamic, { Loader } from 'next/dynamic';
 
 // Define props type for the fallback component
 interface FallbackProps {
@@ -37,7 +37,7 @@ const defaultOptions: DynamicWithRetryOptions = {
 // Function to create a dynamic component with automatic retry logic
 function dynamicWithAutoRetry<P = Record<string, never>>(
   importFunction: () => Promise<{ default: ComponentType<P> }>, // Function to import a dynamic component
-  options?: Partial<DynamicWithRetryOptions> // Options for retries and loading components
+  options?: Partial<DynamicWithRetryOptions>, // Options for retries and loading components
 ) {
   const {
     retries = defaultOptions.retries,
@@ -74,7 +74,7 @@ function dynamicWithAutoRetry<P = Record<string, never>>(
 
   // Return a functional component that handles loading and error states
   return function DynamicComponentWithFallback(
-    props: P & JSX.IntrinsicAttributes
+    props: P & JSX.IntrinsicAttributes,
   ) {
     const [error, setError] = useState<boolean>(false); // Error state for tracking load failure
     const [loading, setLoading] = useState<boolean>(true); // Loading state to track if the component is still loading

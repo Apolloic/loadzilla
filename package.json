@@ -1,0 +1,44 @@
+{
+  "name": "loadzilla",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "ci": "npm run build",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "next": "^13.0.0",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "prettier": "^3.3.3",
+    "typescript": "^4.9.5"
+  },
+  "description": "A dynamic component loader with auto-retry functionality for React and Next.js applications",
+  "keywords": [
+    "react",
+    "next.js",
+    "dynamic-import",
+    "auto-retry",
+    "typescript"
+  ],
+  "homepage": "https://github.com/Apolloic/loadzilla",
+  "bugs": {
+    "url": "https://github.com/Apolloic/loadzilla/issues"
+  },
+  "author": "Matt Pocock <team@totaltypescript.com> (https://totaltypescript.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Apolloic/loadzilla.git"
+  },
+  "main": "dist/core.js",
+  "types": "dist/core.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "type": "module",
+  "license": "MIT"
+}
