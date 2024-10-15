@@ -28,8 +28,8 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": "./dist/core.js",
-      "require": "./dist/core.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "description": "A dynamic component loader with auto-retry functionality for React and Next.js applications",
@@ -49,9 +49,9 @@
     "type": "git",
     "url": "git+https://github.com/Apolloic/loadzilla.git"
   },
-  "main": "dist/core.js",
-  "module": "dist/core.js",
-  "types": "dist/core.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "src"
