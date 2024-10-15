@@ -1,5 +1,11 @@
 # loadzilla
 
+## 0.0.5
+
+### Patch Changes
+
+- 5771e9a: Add support for dynamic option in next/dynamic
+
 ## 0.0.4
 
 ### Patch Changes
