@@ -23,7 +23,7 @@ The `dynamicWithAutoRetry` function from Loadzilla allows you to dynamically loa
 Here’s how to use Loadzilla in your application:
 
 ```typescript
-import dynamicWithAutoRetry from 'loadzilla';
+import { dynamicWithAutoRetry } from 'loadzilla';
 
 // Your fallback component for when loading fails
 const FallbackComponent = ({ onRetry }) => (
